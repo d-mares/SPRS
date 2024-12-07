@@ -63,8 +63,6 @@ namespace SPRS
             else return db.SQLDS.Tables[0].Rows[0][0].ToString();
         }
 
-
-
         private void Section_Clicked(object sender, EventArgs e)
         {
             // Check if the sender has a Tag property and retrieve its value
@@ -80,7 +78,7 @@ namespace SPRS
             int max = int.Parse(Get_Count('R'));
 
             Random random = new Random();
-            Active_User.Product_To_Be_Shown = random.Next(max+1);
+            Active_User.Product_To_Be_Shown = random.Next(max);
 
 
             // Check if the sender has a Tag property and retrieve its value
@@ -91,9 +89,5 @@ namespace SPRS
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

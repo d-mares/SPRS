@@ -117,7 +117,7 @@
     <Compile Include="Active Classes\PasswordHelper.cs" />
     <Compile Include="Active Classes\Product.cs" />
     <Compile Include="Active Classes\Queried_Product.cs" />
-    <Compile Include="BasePanel.cs">
+    <Compile Include="Dashboard Panels\BasePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Custom Controls\ProductCard.cs">
@@ -125,6 +125,12 @@
     </Compile>
     <Compile Include="Custom Controls\ProductCard.Designer.cs">
       <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\Product_List_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\Product_List_Item.Designer.cs">
+      <DependentUpon>Product_List_Item.cs</DependentUpon>
     </Compile>
     <Compile Include="Custom Controls\RoundedPanel.cs">
       <SubType>Component</SubType>
@@ -189,6 +195,12 @@
     <Compile Include="Dashboard Panels\Search_Panel.Designer.cs">
       <DependentUpon>Search_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard Panels\Search_Result_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard Panels\Search_Result_Panel.Designer.cs">
+      <DependentUpon>Search_Result_Panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard Panels\Wishlist.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,6 +240,9 @@
     <EmbeddedResource Include="Custom Controls\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\Product_List_Item.resx">
+      <DependentUpon>Product_List_Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard Panels\Authors.resx">
       <DependentUpon>Authors.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard Panels\Search_Panel.resx">
       <DependentUpon>Search_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard Panels\Search_Result_Panel.resx">
+      <DependentUpon>Search_Result_Panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard Panels\Wishlist.resx">
       <DependentUpon>Wishlist.cs</DependentUpon>

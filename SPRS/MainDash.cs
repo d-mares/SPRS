@@ -47,6 +47,7 @@ namespace SPRS
         }
 
         private void LoadPanelByTag(string tag) {
+
             UserControl ActivePanel = null;
             switch (tag)
             {

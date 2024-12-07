@@ -10,52 +10,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SPRS.Dashboard_Panels
+namespace SPRS.Custom_Controls
 {
-    public partial class Product_Details : UserControl
+    public partial class Product_List_Item : UserControl
     {
         int prod_id;
-        Product Product;
+        Product product;
         
-        public Product_Details()
+        public Product_List_Item()
         {
             InitializeComponent();
-            prod_id = Active_User.Product_To_Be_Shown;
-            Product = Queried_Products.GetProductById(prod_id);
-            Load_Image(prod_id);
-            Update_Viewed(); // we want to update the user actions table to add an entry with the product as viewed
-            Product_Details_Load();
         }
 
+        public event EventHandler<string> ReplacePanelRequested;
+
+        public Product_List_Item(int id)
+        {
+            InitializeComponent();
+            prod_id = id;
+            product = Queried_Products.GetProductById(prod_id);
+            Load_Image(prod_id);
+            Product_Details_Load();
+
+        }
         private void Product_Details_Load()
         {
-            button1.Text = Product.Title;
-            button2.Text = Product.Author;
-            button5.Text += Product.Description;
-            button6.Text = $"$ {Product.Price.ToString("n2")}";
-            year.Text += Product.Year;
-            button8.Text += Product.PrimaryCategory;
-            button9.Text += Product.SecondaryCategory;
-            button10.Text += Product.Publisher;
-            button11.Text += Product.CopiesSold;
-        }
-
-        private void Update_Viewed()
-        {
-            SQLControl db = new SQLControl();
-            string query =
-                "INSERT INTO USER_ACTIVITY(USER_ID, PRODUCT_ID, ACTIVITY_TYPE, ACTIVITY_TIME)VALUES (@user, @prod_id, 'VIEW', @time)";
-            db.AddParam("@user", Active_User.LoggedInUserId);
-            db.AddParam("@prod_id", prod_id);
-            db.AddParam("@time", DateTime.Now);
-            db.ExecQuery(query);
-
-
-            if (!string.IsNullOrEmpty(db.Exception))
-            {
-                MessageBox.Show($"Error: {db.Exception}");
-                return;
-            }
+            button1.Text = $"{product.Title} \r\n {product.Author} ";
+            button2.Text = $"$ {product.Price.ToString("n2")}";
+            button8.Text = $"{product.PrimaryCategory}, {product.SecondaryCategory}" ;
         }
         private void Load_Image(int id)
         {
@@ -64,38 +46,13 @@ namespace SPRS.Dashboard_Panels
             pictureBox1.Image = Image.FromFile(imagePath);
         }
 
-        private void Add_To_Wishlist(object sender, EventArgs e)
+        private void Send_To_Product(object sender, EventArgs e)
         {
-            SQLControl db = new SQLControl();
+            Active_User.Product_To_Be_Shown = prod_id;
 
-            // Check if the product is already wishlisted by the user
-            string checkQuery = "SELECT COUNT(*) FROM WISHLISTED_ITEMS WHERE user_id = @user AND product_id = @prod_id";
-            db.AddParam("@user", Active_User.LoggedInUserId);
-            db.AddParam("@prod_id", prod_id);
-            db.ExecQuery(checkQuery);
-
-            if (int.Parse(db.SQLDS.Tables[0].Rows[0][0].ToString()) > 0) // If the count is greater than 0, the item is already in the wishlist
-            {
-                MessageBox.Show("This item is already in your wishlist!");
-                return;
-            }
-
-            // If not, insert the new wishlist entry
-            string insertQuery = "INSERT INTO WISHLISTED_ITEMS(user_id, product_id) VALUES (@user, @prod_id)";
-            db.AddParam("@user", Active_User.LoggedInUserId);
-            db.AddParam("@prod_id", prod_id);
-            db.ExecQuery(insertQuery);
-
-            if (!string.IsNullOrEmpty(db.Exception))
-            {
-                MessageBox.Show($"Error: {db.Exception}");
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Item successfully added to your wishlist!");
-            }
+            ReplacePanelRequested?.Invoke(this, "DETAILS");
         }
+
         private void Add_To_Cart(object sender, EventArgs e)
         {
             SQLControl db = new SQLControl();
@@ -126,6 +83,39 @@ namespace SPRS.Dashboard_Panels
             else
             {
                 MessageBox.Show("Item successfully added to your cart!");
+            }
+        }
+
+        private void Add_To_Bookmark(object sender, EventArgs e)
+        {
+            SQLControl db = new SQLControl();
+
+            // Check if the product is already wishlisted by the user
+            string checkQuery = "SELECT COUNT(*) FROM WISHLISTED_ITEMS WHERE user_id = @user AND product_id = @prod_id";
+            db.AddParam("@user", Active_User.LoggedInUserId);
+            db.AddParam("@prod_id", prod_id);
+            db.ExecQuery(checkQuery);
+
+            if (int.Parse(db.SQLDS.Tables[0].Rows[0][0].ToString()) > 0) // If the count is greater than 0, the item is already in the wishlist
+            {
+                MessageBox.Show("This item is already in your wishlist!");
+                return;
+            }
+
+            // If not, insert the new wishlist entry
+            string insertQuery = "INSERT INTO WISHLISTED_ITEMS(user_id, product_id) VALUES (@user, @prod_id)";
+            db.AddParam("@user", Active_User.LoggedInUserId);
+            db.AddParam("@prod_id", prod_id);
+            db.ExecQuery(insertQuery);
+
+            if (!string.IsNullOrEmpty(db.Exception))
+            {
+                MessageBox.Show($"Error: {db.Exception}");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Item successfully added to your wishlist!");
             }
         }
     }
