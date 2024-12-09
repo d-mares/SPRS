@@ -37,13 +37,21 @@ namespace SPRS.Custom_Controls
         {
             button1.Text = $"{product.Title} \r\n {product.Author} ";
             button2.Text = $"$ {product.Price.ToString("n2")}";
+            button3.Text = $"{product.Publisher}";
             button8.Text = $"{product.PrimaryCategory}, {product.SecondaryCategory}" ;
         }
         private void Load_Image(int id)
         {
             string solution_directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\");
             string imagePath = Path.Combine(solution_directory, "product_images", $"{id}.jpg");
-            pictureBox1.Image = Image.FromFile(imagePath);
+            try
+            {
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
+            catch
+            {
+                pictureBox1.Image = Properties.Resources.Default_Book;
+            }
         }
 
         private void Send_To_Product(object sender, EventArgs e)

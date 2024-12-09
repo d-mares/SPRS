@@ -336,6 +336,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Bookstore.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Default_Book.jpg" />
     <None Include="Resources\Fire.jpg" />
     <None Include="Resources\question.jpg" />
     <None Include="Resources\back.jpg" />

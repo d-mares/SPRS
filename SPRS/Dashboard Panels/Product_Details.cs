@@ -38,6 +38,7 @@ namespace SPRS.Dashboard_Panels
             button9.Text += Product.SecondaryCategory;
             button10.Text += Product.Publisher;
             button11.Text += Product.CopiesSold;
+            label1.Text = prod_id.ToString();
         }
 
         private void Update_Viewed()
@@ -61,7 +62,14 @@ namespace SPRS.Dashboard_Panels
         {
             string solution_directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\");
             string imagePath = Path.Combine(solution_directory, "product_images", $"{id}.jpg");
-            pictureBox1.Image = Image.FromFile(imagePath);
+            try
+            {
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
+            catch
+            {
+                pictureBox1.Image = Properties.Resources.Default_Book;
+            }
         }
 
         private void Add_To_Wishlist(object sender, EventArgs e)

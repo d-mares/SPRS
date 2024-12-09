@@ -82,6 +82,7 @@ namespace SPRS
                     ActivePanel = new CartPanel();
                     break;
                 case "SEARCH":
+                    Active_User.Searchbar_Text = textBox1.Text;
                     ActivePanel = new Search_Panel();
                     break;
                 case "DETAILS":
@@ -99,6 +100,9 @@ namespace SPRS
             {
                 // The new panel will fill the whole existing panel when added
                 ActivePanel.Dock = DockStyle.Fill;
+
+                // Add panel to stack
+                Active_User.panels.Push(ActivePanel);
 
                 // Clear the current controls in the panel
                 Main_Fillable_Panel.Controls.Clear();
@@ -121,6 +125,23 @@ namespace SPRS
             Login login = new Login();
             this.Hide();
             login.Show();
+        }
+
+        private void Go_Back(object sender, EventArgs e)
+        {
+            if (Active_User.panels.Count > 0)
+            {
+                Control panel = Active_User.panels.Pop();
+
+                if (Main_Fillable_Panel.Controls[0] == panel && Active_User.panels.Count > 0)
+                {
+                    panel = Active_User.panels.Pop();
+                }
+
+                Main_Fillable_Panel.Controls.Clear();
+
+                Main_Fillable_Panel.Controls.Add(panel);
+            }
         }
     }
 }

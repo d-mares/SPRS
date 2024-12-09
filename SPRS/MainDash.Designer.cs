@@ -56,6 +56,7 @@ namespace SPRS
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.roundedPanel1 = new SPRS.Custom_Controls.RoundedPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -75,6 +76,7 @@ namespace SPRS
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -415,7 +417,7 @@ namespace SPRS
             this.roundButton1.Size = new System.Drawing.Size(204, 64);
             this.roundButton1.TabIndex = 1;
             this.roundButton1.Tag = "POPULAR";
-            this.roundButton1.Text = "Popular Products";
+            this.roundButton1.Text = "Popular Now";
             this.roundButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.roundButton1.UseVisualStyleBackColor = false;
             this.roundButton1.Click += new System.EventHandler(this.Generate_Main_Panel);
@@ -505,6 +507,7 @@ namespace SPRS
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.roundedPanel1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -513,6 +516,22 @@ namespace SPRS
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(865, 50);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::SPRS.Properties.Resources.Picture7;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox6.Image = global::SPRS.Properties.Resources.back;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(52, 44);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Tag = "";
+            this.pictureBox6.Click += new System.EventHandler(this.Go_Back);
             // 
             // roundedPanel1
             // 
@@ -535,10 +554,11 @@ namespace SPRS
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(51, 5);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.textBox1.Location = new System.Drawing.Point(50, 5);
             this.textBox1.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 31);
+            this.textBox1.Size = new System.Drawing.Size(220, 31);
             this.textBox1.TabIndex = 5;
             // 
             // pictureBox4
@@ -548,9 +568,9 @@ namespace SPRS
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox4.Location = new System.Drawing.Point(12, 5);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 34);
+            this.pictureBox4.Size = new System.Drawing.Size(38, 34);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "SEARCH";
@@ -625,6 +645,7 @@ namespace SPRS
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.roundedPanel1.ResumeLayout(false);
             this.roundedPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -668,5 +689,6 @@ namespace SPRS
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

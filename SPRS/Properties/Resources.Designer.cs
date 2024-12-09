@@ -73,6 +73,16 @@ namespace SPRS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Default_Book {
+            get {
+                object obj = ResourceManager.GetObject("Default_Book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fire {
             get {
                 object obj = ResourceManager.GetObject("Fire", resourceCulture);
