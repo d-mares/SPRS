@@ -40,17 +40,23 @@ namespace SPRS
             this.roundedPanel4 = new SPRS.Custom_Controls.RoundedPanel();
             this.button5 = new System.Windows.Forms.Button();
             this.roundedPanel1 = new SPRS.Custom_Controls.RoundedPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.roundedPanel9 = new SPRS.Custom_Controls.RoundedPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.roundedPanel2 = new SPRS.Custom_Controls.RoundedPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.button6 = new System.Windows.Forms.Button();
             this.roundedPanel3 = new SPRS.Custom_Controls.RoundedPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.roundedPanel8 = new SPRS.Custom_Controls.RoundedPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.roundedPanel5 = new SPRS.Custom_Controls.RoundedPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.roundedPanel10 = new SPRS.Custom_Controls.RoundedPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.roundedPanel6 = new SPRS.Custom_Controls.RoundedPanel();
             this.Cart = new SPRS.Custom_Controls.RoundedPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,13 +72,19 @@ namespace SPRS
             this.roundedPanel7.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.roundedPanel4.SuspendLayout();
+            this.roundedPanel1.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.roundedPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.roundedPanel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.roundedPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.roundedPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.roundedPanel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.roundedPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.roundedPanel6.SuspendLayout();
             this.Cart.SuspendLayout();
@@ -236,35 +248,155 @@ namespace SPRS
             // 
             // roundedPanel1
             // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.roundedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(229)))), ((int)(((byte)(245)))));
             this.roundedPanel1.BorderColor = System.Drawing.Color.Black;
             this.roundedPanel1.BorderSize = 2;
             this.tableLayoutPanel1.SetColumnSpan(this.roundedPanel1, 2);
+            this.roundedPanel1.Controls.Add(this.tableLayoutPanel7);
             this.roundedPanel1.CornerRadius = 20;
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
             this.roundedPanel1.Location = new System.Drawing.Point(35, 35);
             this.roundedPanel1.Margin = new System.Windows.Forms.Padding(10);
             this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(25);
             this.roundedPanel1.Size = new System.Drawing.Size(520, 193);
             this.roundedPanel1.TabIndex = 0;
+            this.roundedPanel1.Tag = "DETAILS";
+            this.roundedPanel1.Click += new System.EventHandler(this.Mystery_Choice);
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel7.Controls.Add(this.roundedPanel9, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.button7, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(25, 25);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(470, 143);
+            this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // roundedPanel9
+            // 
+            this.roundedPanel9.BackColor = System.Drawing.Color.White;
+            this.roundedPanel9.BorderColor = System.Drawing.Color.Black;
+            this.roundedPanel9.BorderSize = 2;
+            this.roundedPanel9.Controls.Add(this.pictureBox3);
+            this.roundedPanel9.CornerRadius = 20;
+            this.roundedPanel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedPanel9.Location = new System.Drawing.Point(261, 3);
+            this.roundedPanel9.Name = "roundedPanel9";
+            this.roundedPanel9.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedPanel9.Size = new System.Drawing.Size(206, 137);
+            this.roundedPanel9.TabIndex = 3;
+            this.roundedPanel9.Tag = "DETAILS";
+            this.roundedPanel9.Click += new System.EventHandler(this.Mystery_Choice);
+            this.roundedPanel9.Paint += new System.Windows.Forms.PaintEventHandler(this.roundedPanel9_Paint);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::SPRS.Properties.Resources.question;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(186, 117);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "DETAILS";
+            this.pictureBox3.Click += new System.EventHandler(this.Mystery_Choice);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(229)))), ((int)(((byte)(245)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button7.Location = new System.Drawing.Point(3, 3);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(252, 137);
+            this.button7.TabIndex = 2;
+            this.button7.Tag = "DETAILS";
+            this.button7.Text = "Too many great options?\r\n\r\nSuprise me!\r\n\r\n";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.Mystery_Choice);
             // 
             // roundedPanel2
             // 
-            this.roundedPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.roundedPanel2.BackColor = System.Drawing.Color.White;
             this.roundedPanel2.BorderColor = System.Drawing.Color.Black;
             this.roundedPanel2.BorderSize = 2;
+            this.roundedPanel2.Controls.Add(this.panel5);
             this.roundedPanel2.CornerRadius = 20;
+            this.roundedPanel2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roundedPanel2.Location = new System.Drawing.Point(575, 35);
             this.roundedPanel2.Margin = new System.Windows.Forms.Padding(10);
             this.roundedPanel2.Name = "roundedPanel2";
+            this.roundedPanel2.Padding = new System.Windows.Forms.Padding(25);
             this.tableLayoutPanel1.SetRowSpan(this.roundedPanel2, 2);
             this.roundedPanel2.Size = new System.Drawing.Size(250, 406);
             this.roundedPanel2.TabIndex = 1;
+            this.roundedPanel2.Tag = "CATEG";
+            this.roundedPanel2.Click += new System.EventHandler(this.Section_Clicked);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.tableLayoutPanel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(25, 25);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 356);
+            this.panel5.TabIndex = 0;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.button6, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(200, 356);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button6.Location = new System.Drawing.Point(3, 3);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(194, 83);
+            this.button6.TabIndex = 3;
+            this.button6.Tag = "CATEG";
+            this.button6.Text = "Recommended Category\r\n\"";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Section_Clicked);
             // 
             // roundedPanel3
             // 
-            this.roundedPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.roundedPanel3.BackColor = System.Drawing.Color.White;
             this.roundedPanel3.BorderColor = System.Drawing.Color.Black;
             this.roundedPanel3.BorderSize = 2;
             this.roundedPanel3.Controls.Add(this.tableLayoutPanel4);
@@ -278,80 +410,46 @@ namespace SPRS
             this.tableLayoutPanel1.SetRowSpan(this.roundedPanel3, 2);
             this.roundedPanel3.Size = new System.Drawing.Size(253, 406);
             this.roundedPanel3.TabIndex = 2;
-            this.roundedPanel3.Tag = "DETAILS";
-            this.roundedPanel3.Click += new System.EventHandler(this.Mystery_Choice);
+            this.roundedPanel3.Tag = "FOR_YOU";
+            this.roundedPanel3.Click += new System.EventHandler(this.Section_Clicked);
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.roundedPanel8, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.button3, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(25, 25);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(203, 356);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // roundedPanel8
-            // 
-            this.roundedPanel8.BackColor = System.Drawing.Color.White;
-            this.roundedPanel8.BorderColor = System.Drawing.Color.Black;
-            this.roundedPanel8.BorderSize = 2;
-            this.roundedPanel8.Controls.Add(this.pictureBox1);
-            this.roundedPanel8.CornerRadius = 20;
-            this.roundedPanel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel8.Location = new System.Drawing.Point(3, 198);
-            this.roundedPanel8.Name = "roundedPanel8";
-            this.roundedPanel8.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedPanel8.Size = new System.Drawing.Size(197, 155);
-            this.roundedPanel8.TabIndex = 0;
-            this.roundedPanel8.Tag = "DETAILS";
-            this.roundedPanel8.Click += new System.EventHandler(this.Mystery_Choice);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::SPRS.Properties.Resources.question;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 135);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "DETAILS";
-            this.pictureBox1.Click += new System.EventHandler(this.Mystery_Choice);
+            this.tableLayoutPanel4.TabIndex = 1;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
             this.button3.Location = new System.Drawing.Point(3, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 189);
-            this.button3.TabIndex = 1;
-            this.button3.Tag = "DETAILS";
-            this.button3.Text = "Don\'t know where to start?\r\n\r\nSuprise Me!";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Mystery_Choice);
+            this.button3.Size = new System.Drawing.Size(197, 83);
+            this.button3.TabIndex = 3;
+            this.button3.Tag = "FOR_YOU";
+            this.button3.Text = "Books You\'ll Love";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Section_Clicked);
             // 
             // roundedPanel5
             // 
-            this.roundedPanel5.BackColor = System.Drawing.Color.White;
+            this.roundedPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
             this.roundedPanel5.BorderColor = System.Drawing.Color.Black;
             this.roundedPanel5.BorderSize = 2;
             this.tableLayoutPanel1.SetColumnSpan(this.roundedPanel5, 2);
@@ -382,8 +480,8 @@ namespace SPRS
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.Controls.Add(this.roundedPanel10, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.button4, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.pictureBox2, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -395,17 +493,48 @@ namespace SPRS
             this.tableLayoutPanel5.Tag = "POPULAR";
             this.tableLayoutPanel5.Click += new System.EventHandler(this.Section_Clicked);
             // 
+            // roundedPanel10
+            // 
+            this.roundedPanel10.BackColor = System.Drawing.Color.White;
+            this.roundedPanel10.BorderColor = System.Drawing.Color.Black;
+            this.roundedPanel10.BorderSize = 2;
+            this.roundedPanel10.Controls.Add(this.pictureBox2);
+            this.roundedPanel10.CornerRadius = 20;
+            this.roundedPanel10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedPanel10.Location = new System.Drawing.Point(318, 3);
+            this.roundedPanel10.Name = "roundedPanel10";
+            this.roundedPanel10.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedPanel10.Size = new System.Drawing.Size(152, 139);
+            this.roundedPanel10.TabIndex = 3;
+            this.roundedPanel10.Tag = "POPULAR";
+            this.roundedPanel10.Click += new System.EventHandler(this.Section_Clicked);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::SPRS.Properties.Resources.Fire;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(132, 119);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "POPULAR";
+            this.pictureBox2.Click += new System.EventHandler(this.Section_Clicked);
+            // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(3, 3);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(309, 139);
@@ -414,19 +543,6 @@ namespace SPRS
             this.button4.Text = "Hot Right Now";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Section_Clicked);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::SPRS.Properties.Resources.Fire;
-            this.pictureBox2.Location = new System.Drawing.Point(318, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(152, 139);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // roundedPanel6
             // 
@@ -558,13 +674,19 @@ namespace SPRS
             this.roundedPanel7.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.roundedPanel4.ResumeLayout(false);
+            this.roundedPanel1.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.roundedPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.roundedPanel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
             this.roundedPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.roundedPanel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.roundedPanel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.roundedPanel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.roundedPanel6.ResumeLayout(false);
             this.Cart.ResumeLayout(false);
@@ -599,14 +721,20 @@ namespace SPRS
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Cart_Count;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button3;
-        private Custom_Controls.RoundedPanel roundedPanel8;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private Custom_Controls.RoundedPanel roundedPanel9;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button7;
+        private Custom_Controls.RoundedPanel roundedPanel10;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button button3;
     }
 }

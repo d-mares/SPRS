@@ -16,5 +16,6 @@ namespace SPRS.Active_Classes
         public static int Product_To_Be_Shown = -1;
         public static Stack<Control> panels = new Stack<Control>();
         public static string Searchbar_Text = "";
+        public static string recommended_categ;
     }
 }

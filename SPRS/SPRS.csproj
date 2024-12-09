@@ -117,6 +117,18 @@
     <Compile Include="Active Classes\PasswordHelper.cs" />
     <Compile Include="Active Classes\Product.cs" />
     <Compile Include="Active Classes\Queried_Product.cs" />
+    <Compile Include="Custom Controls\Single_Carousel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\Single_Carousel.Designer.cs">
+      <DependentUpon>Single_Carousel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\Wishlist_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\Wishlist_Item.Designer.cs">
+      <DependentUpon>Wishlist_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard Panels\BasePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,12 +248,18 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQLControl.cs" />
+    <Compile Include="Active Classes\SQLControl.cs" />
     <EmbeddedResource Include="Custom Controls\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Custom Controls\Product_List_Item.resx">
       <DependentUpon>Product_List_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\Single_Carousel.resx">
+      <DependentUpon>Single_Carousel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\Wishlist_Item.resx">
+      <DependentUpon>Wishlist_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard Panels\Authors.resx">
       <DependentUpon>Authors.cs</DependentUpon>
@@ -336,6 +354,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Bookstore.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\minus.jpg" />
+    <None Include="Resources\arrow_r.jpg" />
+    <None Include="Resources\arrow_l.jpg" />
     <None Include="Resources\Default_Book.jpg" />
     <None Include="Resources\Fire.jpg" />
     <None Include="Resources\question.jpg" />

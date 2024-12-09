@@ -1,4 +1,5 @@
-﻿using SPRS.Custom_Controls;
+﻿using SPRS.Active_Classes;
+using SPRS.Custom_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,12 +41,25 @@ namespace SPRS.Dashboard_Panels
             comboBox1.DataSource = db.SQLDS.Tables[0];  // Bind the data table
             comboBox1.DisplayMember = "CATEGORY";              // Column to display
             comboBox1.ValueMember = "CATEGORY";
+
+            if (!string.IsNullOrEmpty(Active_User.recommended_categ))
+            {
+                comboBox1.SelectedValue = Active_User.recommended_categ;
+                Show_Panel();
+
+            }
         }
 
         private void Update_Panel(object sender, EventArgs e)
         {
+            Show_Panel();
+        }
+
+        private void Show_Panel()
+        {
             string selectedCategory = comboBox1.SelectedValue?.ToString();
 
+            label1.Text = $"Categories - {selectedCategory}";
             if (string.IsNullOrEmpty(selectedCategory))
             {
                 MessageBox.Show("Please select a valid category.");

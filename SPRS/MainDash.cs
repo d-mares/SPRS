@@ -19,7 +19,6 @@ namespace SPRS
         {
             InitializeComponent();
 
-            Home_Panel home = new Home_Panel();
             LoadPanelByTag("HOME");
         }
 
