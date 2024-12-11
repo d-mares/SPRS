@@ -117,6 +117,18 @@
     <Compile Include="Active Classes\PasswordHelper.cs" />
     <Compile Include="Active Classes\Product.cs" />
     <Compile Include="Active Classes\Queried_Product.cs" />
+    <Compile Include="Custom Controls\Cart_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\Cart_Item.Designer.cs">
+      <DependentUpon>Cart_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Controls\History_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\History_Item.Designer.cs">
+      <DependentUpon>History_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Custom Controls\Single_Carousel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +261,12 @@
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
     <Compile Include="Active Classes\SQLControl.cs" />
+    <EmbeddedResource Include="Custom Controls\Cart_Item.resx">
+      <DependentUpon>Cart_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Controls\History_Item.resx">
+      <DependentUpon>History_Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Custom Controls\ProductCard.resx">
       <DependentUpon>ProductCard.cs</DependentUpon>
     </EmbeddedResource>

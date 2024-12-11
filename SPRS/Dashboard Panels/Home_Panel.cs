@@ -49,7 +49,7 @@ namespace SPRS
                 "WHERE UA.ACTIVITY_TIME > NOW() - INTERVAL 30 DAY " +
                 "GROUP BY P.PRODUCT_ID, P.TITLE " +
                 "ORDER BY WeightedScore DESC, TotalInteractions DESC " +
-                "LIMIT 150;";
+                "LIMIT 20;";
 
             db.AddParam("@user_id", Active_User.LoggedInUserId);
             db.ExecQuery(query);
@@ -72,6 +72,7 @@ namespace SPRS
             else return;
 
             Single_Carousel carousel = new Single_Carousel(prods);
+            prods = null;
             carousel.Dock = DockStyle.Fill;
             carousel.PanelChangeRequest += HandlePanelChangeRequest;
             tableLayoutPanel4.Controls.Add(carousel);
@@ -120,7 +121,7 @@ namespace SPRS
                 "FROM PRODUCT P " +
                 "JOIN FilteredBooks FB ON P.PRODUCT_ID = FB.PRODUCT_ID " +
                 "ORDER BY FB.InteractionScore DESC " +
-                "LIMIT 5;";
+                "LIMIT 20;";
 
             db.AddParam("@user_id", Active_User.LoggedInUserId);
             db.ExecQuery(query);
@@ -221,7 +222,7 @@ namespace SPRS
                 "WHERE O.USER_ID = @user_id " +
             ") " +
             "ORDER BY P.COPIES_SOLD DESC " +
-            "LIMIT 5;";
+            "LIMIT 20;";
 
             db.AddParam("@user_id", Active_User.LoggedInUserId);
             db.ExecQuery(query);
@@ -268,7 +269,7 @@ namespace SPRS
                 "FROM PRODUCT P " +
                 "WHERE P.PRIMARY_CATEG = (SELECT category FROM BestSellingCategory) " +
                 "ORDER BY P.COPIES_SOLD DESC " +
-                "LIMIT 5;";
+                "LIMIT 20;";
 
             db.ExecQuery(query);
 

@@ -317,7 +317,7 @@ namespace SPRS
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(229)))), ((int)(((byte)(245)))));
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(229)))), ((int)(((byte)(245)))));
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -328,7 +328,7 @@ namespace SPRS
             this.button7.Size = new System.Drawing.Size(252, 137);
             this.button7.TabIndex = 2;
             this.button7.Tag = "DETAILS";
-            this.button7.Text = "Too many great options?\r\n\r\nSuprise me!\r\n\r\n";
+            this.button7.Text = "Too many great options?\r\n\r\n\r\nSuprise me!\r\n\r\n";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.Mystery_Choice);
             // 

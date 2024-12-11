@@ -47,6 +47,7 @@ namespace SPRS.Dashboard_Panels
                         // Create a new instance of Wishlist_Item with the product ID
                         Wishlist_Item wishlistItem = new Wishlist_Item(productId);
                         wishlistItem.ReplacePanelRequested += HandlePanelChangeRequest;
+                        wishlistItem.RemoveItem += HandleRemoveItem;
 
                         // Add the Wishlist_Item to the flowLayoutPanel
                         flowLayoutPanel1.Controls.Add(wishlistItem);
@@ -61,6 +62,20 @@ namespace SPRS.Dashboard_Panels
         private void HandlePanelChangeRequest(object sender, string tag)
         {
             RequestPanelChange(tag);
+        }
+        private void HandleRemoveItem(object sender, EventArgs e)
+        {
+            if (sender is Wishlist_Item removableControl)
+            {
+                // Unsubscribe from the event
+                removableControl.RemoveItem -= HandleRemoveItem;
+
+                // Remove the control from its parent container
+                removableControl.Parent?.Controls.Remove(removableControl);
+
+                // Dispose of the control to release resources
+                removableControl.Dispose();
+            }
         }
     }
 }

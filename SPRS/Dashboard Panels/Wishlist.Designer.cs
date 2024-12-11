@@ -80,6 +80,7 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(25);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(982, 676);
             this.flowLayoutPanel1.TabIndex = 3;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
             // Wishlist
             // 

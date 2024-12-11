@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace SPRS.Custom_Controls
 {
-    public partial class Wishlist_Item : UserControl
+    public partial class Cart_Item : UserControl
     {
         int prod_id;
         public event EventHandler<string> ReplacePanelRequested;
         public event EventHandler RemoveItem;
         Product product;
-        public Wishlist_Item(int id)
+        public Cart_Item(int id)
         {
             InitializeComponent();
             prod_id = id;
@@ -26,6 +26,7 @@ namespace SPRS.Custom_Controls
             Load_Image(prod_id);
             Product_Details_Load();
         }
+
         private void Product_Details_Load()
         {
             button1.Text = $"{product.Title} \r\n {product.Author} ";
@@ -39,40 +40,6 @@ namespace SPRS.Custom_Controls
             Active_User.Product_To_Be_Shown = prod_id;
 
             ReplacePanelRequested?.Invoke(this, "DETAILS");
-        }
-
-        private void Add_To_Cart(object sender, EventArgs e)
-        {
-            SQLControl db = new SQLControl();
-
-            // Check if the product is already wishlisted by the user
-            string checkQuery = "SELECT COUNT(*) FROM user_cart_products WHERE user_id = @user AND product_id = @prod_id";
-            db.AddParam("@user", Active_User.LoggedInUserId);
-            db.AddParam("@prod_id", prod_id);
-            db.ExecQuery(checkQuery);
-
-            if (int.Parse(db.SQLDS.Tables[0].Rows[0][0].ToString()) > 0) // If the count is greater than 0, the item is already in the wishlist
-            {
-                MessageBox.Show("This item is already in your cart!");
-                return;
-            }
-
-            // If not, insert the new wishlist entry
-            string insertQuery = "INSERT INTO user_cart_products(user_id, product_id, quantity) VALUES (@user, @prod_id, 1)";
-            db.AddParam("@user", Active_User.LoggedInUserId);
-            db.AddParam("@prod_id", prod_id);
-            db.ExecQuery(insertQuery);
-
-            if (!string.IsNullOrEmpty(db.Exception))
-            {
-                MessageBox.Show($"Error: {db.Exception}");
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Item successfully added to your cart!");
-            }
-
         }
 
         private void Load_Image(int id)
@@ -89,12 +56,12 @@ namespace SPRS.Custom_Controls
             }
         }
 
-        private void Remove_Wishlist(object sender, EventArgs e)
+        private void Remove_Cart(object sender, EventArgs e)
         {
             SQLControl db = new SQLControl();
 
             // If not, insert the new wishlist entry
-            string query = "DELETE FROM WISHLISTED_ITEMS WHERE USER_ID = @user and PRODUCT_ID = @prod_id";
+            string query = "DELETE FROM USER_CART_PRODUCTS WHERE USER_ID = @user and PRODUCT_ID = @prod_id";
             db.AddParam("@user", Active_User.LoggedInUserId);
             db.AddParam("@prod_id", prod_id);
             db.ExecQuery(query);
@@ -106,8 +73,8 @@ namespace SPRS.Custom_Controls
             }
             else
             {
-                MessageBox.Show("Item removed from wishlist!");
-                RemoveItem?.Invoke(this, EventArgs.Empty);// needs debugging 
+                MessageBox.Show("Item removed from cart!");
+                RemoveItem?.Invoke(this, EventArgs.Empty);
             }
         }
     }
