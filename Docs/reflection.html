@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Booky Documentation</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" target="_self">
+            <img src="images/booky_documentation_logo.jpg" alt="booky documentation logo" class="logo" height="60">
+        </a>
+        <nav>
+            <ul>
+                <li class="header-nav-item"><a href="index.html" target="_self">About</a></li>
+                <li class="header-nav-item"><a href="development.html" target="_self">Development</a></li>
+                <li class="header-nav-item"><a href="guide.html" target="_self">User Guide</a></li>
+                <li class="header-nav-item"><a href="reflection.html" target="_self">Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html" target="_self">About</a></li>
+                    <li><a href="development.html" target="_self">Development</a></li>
+                    <li><a href="guide.html" target="_self">User Guide</a></li>
+                    <li><a href="reflection.html" target="_self">Reflection</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+        <div id="wrapper">
+            <h1>Reflection</h1>
+            <p>
+                The journey of developing Booky has been an invaluable learning experience, providing me with deeper 
+                insights into software development, database management, and user interface design. Throughout this 
+                process, I encountered challenges, explored solutions, and gained practical skills that will be 
+                instrumental in future projects.
+            </p>
+            <br>
+            <hr>
+            <h2>Skills I Developed</h2>
+            <details>
+                <summary>Database Integration</summary>
+                <p>
+                    One of the most significant aspects of this project was connecting a Windows Forms application 
+                    to a database. I gained hands-on experience with designing a relational database, writing SQL 
+                    scripts, and ensuring efficient data retrieval. This step highlighted the importance of careful 
+                    schema design and data integrity in creating a reliable application.
+                </p>
+                <p>
+                    Throughout the proccess I would learn a lot about SQL and effectively using it to collect 
+                    information I need. I learned to effectively join tables, use aggregate functions and grouping 
+                    to analyze whats hot, and writing nested queries to filter and weigh data for recommendations
+                </p>
+            </details>
+            <details>
+                <summary>User Interface Design</summary>
+                <p>
+                    Planning and implementing the application’s user interface taught me how to balance aesthetics 
+                    with functionality. From selecting an appealing color scheme to designing an intuitive navigation 
+                    flow, I learned the value of thoughtful UI/UX design in enhancing the user experience.
+                </p>
+            </details>
+            <details>
+                <summary>Event-Driven Programming</summary>
+                <p>
+                    Working with event-driven programming in C# allowed me to create dynamic interactions within 
+                    the application. By setting up responsive features such as event listeners for navigation, I 
+                    saw how small details could significantly improve usability.
+                </p>
+                <p>
+                    I learned the most about this when troubleshooting the custom controls like the book cards 
+                    or the carousel, making them interact with the main dashboard to send the user to the specified
+                     book on click was troublesome to learn but now I can handle it with confidence and clarity
+                </p>
+            </details>
+            <details>
+                <summary>Project Management and Iterative Development</summary>
+                <p>
+                    Managing the project through its whole life cycle, from the simple idea and requirements, 
+                    to the final product and its maintenance, has reinforced the concepts of careful planning 
+                    that I've come across over the semesters. <br><br>
+                    Because of the scale of this project, I pushed myself to learn and use Git to not only have 
+                    a backup, but to also be able to look back and see the way my program developed over time.
+                </p>
+            </details>
+            <br>
+            <hr>
+            <h2>Potential Improvements</h2>
+            <p>
+                While I am proud of what I accomplished with Booky, there are areas I would like to refine or enhance 
+                in the future
+            </p>
+            <details>
+                <summary>Improved Recommendation System</summary>
+                <p>
+                    I've mentioned that by adding data and users the quality of the recommendation system could improve, 
+                    but there is far greater opportunity with an improved database structure and machine learning 
+                    integration. One way this could happen is with the original data, creating a table with all the 
+                    individual categories as table attributes as either a 1 or a 0. 
+                </p>
+                <p>
+                    Using that as the foundation for the recommendation system would potential elevate the quality of 
+                    the recommendation system tenfold and would be something I would love to come back to in the future.
+                </p>
+            </details>
+            <details>
+                <summary>Performance Optimization</summary>
+                <p>
+                    I've been reading about different techniques for optimizing queries but don't understand enough to
+                     want to implement any of them yet. Techniques like indexing or caching could be explored to handle
+                      everything better.
+                </p>
+                <p>
+                    One serious concern I have with the project at the moment is that I create a new instance of each 
+                    section of the user interface whenever it is called, and not once do I delete previous instances or 
+                    subscriptions to events, so memory usage is quite high. 
+                    This could potentially be a quick fix, but I am not familiar with how to approach this yet, and the 
+                    program is able to run it fine so far. 
+                </p>
+            </details>
+            <details>
+                <summary>Enhanced Features</summary>
+                <p>
+                    This project could still see some features being added, like an administrator dashboard, or current 
+                    features could be improved like the back button to bring a user back to their previous page.
+                </p>
+            </details>
+            <br><hr>
+            <h2>Closing Thoughts</h2>
+            <p>
+                The development of Booky has been both challenging and rewarding, offering an opportunity to put 
+                theoretical knowledge into practice while fostering creativity and problem-solving skills. I honestly 
+                fell in love with the process, whilte it was demanding, each step of the process provided new insights 
+                and learning opportunities, and it has left me inspired to tackle more ambitious projects in the future.
+            </p>
+
+
+        </div>
+        </main>
+    </div>
+    <footer>
+        <p>Daniel Martinez-Escalante. Last Revised 12/10/2024</p>
+    </footer>
+</body>
+</html>

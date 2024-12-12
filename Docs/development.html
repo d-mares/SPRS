@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Booky Documentation</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" target="_self">
+            <img src="images/booky_documentation_logo.jpg" alt="booky documentation logo" class="logo" height="60">
+        </a>
+        <nav>
+            <ul>
+                <li class="header-nav-item"><a href="index.html" target="_self">About</a></li>
+                <li class="header-nav-item"><a href="development.html" target="_self">Development</a></li>
+                <li class="header-nav-item"><a href="guide.html" target="_self">User Guide</a></li>
+                <li class="header-nav-item"><a href="reflection.html" target="_self">Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html" target="_self">About</a></li>
+                    <li><a href="development.html" target="_self">Development</a></li>
+                    <li><a href="guide.html" target="_self">User Guide</a></li>
+                    <li><a href="reflection.html" target="_self">Reflection</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+        <div id="wrapper">
+            <h1>Development Process</h1>
+            <p>
+                The development of Booky was a multi-step journey that combined technical problem-solving, creative design, and iterative refinement. 
+                Each phase of the process played a crucial role in transforming the initial concept into a fully functional bookstore application. 
+                This page outlines the key stages of development, from preparing the foundational dataset to implementing the user interface 
+                and refining the recommendation system. By breaking down each step, this section provides a comprehensive view of how Booky was 
+                built and the considerations that shaped its final form.
+            </p>
+            <br>
+            <hr>
+            <h2>Identifying and Cleaning the Dataset</h2>
+            <p>
+                The development process began with identifying a suitable dataset from <a href="https://www.kaggle.com/">Kaggle</a> to 
+                serve as the foundation for the recommendation system. The  dataset I found was pulled from an online bookstore full of 
+                real books and their authors, genres, and other valuable metadata. After selecting the dataset, I thoroughly cleaned it 
+                to ensure it was ready for use. This involved removing inconsistencies, duplicates, and irrelevant entries, as well as 
+                addressing missing or incomplete data by removing them.
+            </p>
+            <br>
+            <div id="table-container">
+            <table>
+                <caption>Sample Values from Original Dataset</caption>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Publisher</th>
+                    <th>Starting Price ($)</th>
+                    <th>Publish Month</th>
+                    <th>Publish Year</th>
+                </tr>
+                <tr>
+                    <td>Goat Brothers</td>
+                    <td>By Colton, Larry</td>
+                    <td></td>
+                    <td>History , General</td>
+                    <td>Doubleday</td>
+                    <td>8.79</td>
+                    <td>January</td>
+                    <td>1993</td>
+                </tr>
+                <tr>
+                    <td>The Villa</td>
+                    <td>By Roberts, Nora</td>
+                    <td>The top PR executive...</td>
+                    <td>Fiction , Romance , General</td>
+                    <td>G. P. Putnam's Sons</td>
+                    <td>4.99</td>
+                    <td>March</td>
+                    <td>2001</td>
+                </tr>
+                <tr>
+                    <td>How Networks Work</td>
+                    <td>By Freed, Les, Derfler, </td>
+                    <td>An illustrated guide to understanding...</td>
+                    <td>Computers , General</td>
+                    <td>Ziff-Davis Press</td>
+                    <td>6.06</td>
+                    <td>January</td>
+                    <td>1993</td>
+                </tr>
+                <tr>
+                    <td>Travels</td>
+                    <td>By Crichton, Michael</td>
+                    <td>Often I feel I go to some distant region</td>
+                    <td>Biography & Autobiography , Literary</td>
+                    <td>HarpPeren</td>
+                    <td>5.29</td>
+                    <td>November</td>
+                    <td>2002</td>
+                </tr>
+            </table>
+            </div>
+            <br>
+            <p>
+                The cleaning and preparation process was all done using Microsoft Excel and its data transformation wizard. 
+                During this process, I was able to familiarize myself with the data and was able to start planning for the 
+                next development phase.
+            </p>
+            <br>
+            <hr>
+            <div>
+                <div class="image-container" id="diagram" >
+                    <img src="images/entity_relationship_diagram.jpg" alt="entity relationship diagram" >
+                </div>
+                <h2>Designing the Database</h2>
+                <p>
+                    Once the dataset was cleaned, I used it to design the database. This step involved organizing the data 
+                    to be normalized and restructured to help the performance of different queries. This stage is when I 
+                    planned all of the functions I wanted the application to have, such as giving users a wishlist they can 
+                    manage, or storing the user activity to improve the quality of the recommendations.
+                </p>
+                <p>
+                    After planning out the tables, I built the database in the MySql Workbench I restructured the csv file 
+                    I had with the cleaned data and seperated it into multiple files with the corresponding table headers 
+                    so I could easily import the data into the database using the import wizard. 
+                </p>
+                <p>
+                    This was one of the hardest parts of the whole process because the data I used from the descriptions 
+                    was not entirely compatable for a quick and easy import process. Every other table I imported was fine, 
+                    but the description for the books had characters that were not UTF-8 and the import wizard had trouble 
+                    reading it. After a lot of trial and error, I replaced these characters with question marks using a 
+                    python script, and the import went through. 
+                </p>
+            </div>
+            <br>
+            <hr>
+            <div id="collection">
+                <div id="code">
+                    <pre>
+                    <code>
+import os
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+from urllib.parse import quote
+import time
+import random
+
+def download_images_from_csv(csv_file, output_folder, delay=1):
+    # Read the CSV file
+    df = pd.read_csv(csv_file)
+    if df.empty or df.shape[1] < 9:
+        print("CSV file does not have the required columns.")
+        return
+
+    # Create the output folder if it doesn't exist
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    # Iterate through the rows
+    for index, row in df.iterrows():
+        # Extract the main phrase, author last name, and year
+        phrase = row.iloc[0]  # First column
+        author_last_name = row.iloc[1] if not pd.isna(row.iloc[1]) else ""  # Second column
+        year = row.iloc[8] if not pd.isna(row.iloc[8]) else ""  # Ninth column
+
+        # Construct the enhanced search query
+        search_query = f"{phrase} {author_last_name} {year}".strip()
+        print(f"Processing: {search_query}")
+        
+        try:
+            # Search on Bing
+            search_url = f"https://www.bing.com/images/search?q={quote(search_query)}"
+            headers = {"User-Agent": "Mozilla/5.0"}
+            response = requests.get(search_url, headers=headers)
+
+            # Parse the search result page
+            soup = BeautifulSoup(response.text, "html.parser")
+            img_tag = soup.find("img", {"class": "mimg"})  # Find the first image
+
+            if img_tag and img_tag.get("src"):
+                # Download the image
+                img_url = img_tag["src"]
+                img_data = requests.get(img_url).content
+                # Save the image with a descriptive name
+                safe_query = search_query.replace(" ", "_").replace("/", "-")
+                img_path = os.path.join(output_folder, f"{index + 1}.jpg")
+                with open(img_path, "wb") as img_file:
+                    img_file.write(img_data)
+                print(f"Downloaded: {img_path}")
+            else:
+                print(f"No image found for: {search_query}")
+
+            time.sleep(random.uniform(0,1))
+        except Exception as e:
+            print(f"Error processing '{phrase}': {e}")
+
+# Usage
+print(os.getcwd())
+csv_file = "scraper/data.csv"  # Replace with your CSV file name
+output_folder = "scraper/images"  # Folder to save the images
+download_images_from_csv(csv_file, output_folder)
+                    </code>
+                    </pre>
+                </div>
+                <h2>Collecting Images For Books</h2>
+                <p>
+                    To enhance the application's visual appeal and user experience, I thought it was important to have 
+                    images for each book. However, the dataset did not come with any, so I had to find a way to efficiently 
+                    collect the images to display on the page.
+                </p>
+                <p>
+                    To accomplish this, I figured writing a script to go through and find images online with the associated 
+                    title, author, and year would be the best way to do so. This would mean that it would not always be the 
+                    appropriate cover image, but I figured it was more important to have something users can look at than 
+                    nothing at all. The image files were saved as their respective book_id.jpg
+                </p>
+                <p>
+                    BeautifulSoup, pandas, and urllib along with other built in python libraries were used to collect the 
+                    images associated with the books. Some could not find an image, but there is a default value in place 
+                    for those instances. 
+                </p>
+
+
+            </div>
+            <p></p>
+            <br>
+            <hr>
+            <h2>Planning the User Interface</h2>
+            <p>
+                With the database complete, I shifted my focus towards the design of the application. I knew I wanted users to 
+                interact with icons, and the simplest way I could do this would be by formatting them in PowerPoint and 
+                then saving them as pictures to put into the picture boxes or buttons.
+            </p>
+            <p>
+                With this in mind, I thought it would be best to use a basic white background across the form, and select 
+                a color from the PowerPoint pallete and build off of there. This would be best for me because there is 
+                access to limitless icons to use for my application
+            </p>
+            <p>
+                I would use this blue-white color scheme throughout the project and would use icons whenever to guide
+                 users. To tie this together I thought it would be best to have rounded panels and buttons to really 
+                 give the project a different look. It was also important for me to not have users jump around from 
+                 form to form whenever possible, so I knew I had to learn how to build panels, create an instance of 
+                 them, and place them in the form. 
+            </p>
+            <br>
+            <hr>
+            <div class="image-container" id="panel">
+                <img src="images/app_home_panel.jpg" alt="Booky Home Panel" >
+            </div>
+            <h2>Implementing My Design</h2>
+            <p>
+                The implementation phase involved building the application one panel at a time. Each component was 
+                developed individually, starting with the home page and moving on to features like search functionality 
+                and the book details view. After each panel was completed, I tested and refined it to ensure it met both 
+                design and functionality requirements. The modular design made it so that as I finished and implemented 
+                a component of the project, I wouldn't have to worry about it malfunctioning as I developed the rest of the program 
+            </p>
+            <p>
+                Implementing the design in such a way made it possible to simplify the recommendation process by allowing different 
+                user controls to receive a list of books ids based on the user, and using it to generate the view. In this case with 
+                the home, it appears empty but when a user logs in, the carousel in the two vertical panels is generated. 
+            </p>
+            <br>
+            <br>
+            <hr>
+            <h2>Recommendation System</h2>
+            <p>
+                The recommendation system has been and will be a constant work in progress. There are two main recommendation systems
+                in the application, the first recommends a category based on the users activity, and the second looks at the user activity
+                and compares it to other users to offer a recommendation list.
+            </p>
+            <div class="image-container" id="recs">
+                <img src="images/recommendations.jpg" alt="two recommendation carousels from the application">
+            </div>
+            <p>
+                The first simply weighs the users activity by type, such as a purchase, bookmark, or view, and sorts it by category and finally
+                produces a carousel where the user can see a shortlist of books in their favorite category. It also becomes the category the
+                user first sees when they enter the category search.
+            </p>
+            <p>
+                The main recommendaton system is the heart behind the for you page. It first identifies users who have interacted with the same books,
+                these interactions are weighted and then sorted. The threshold for how similar a user must be can be tweaked to improve the performance 
+                of the system. Once identifying the similar users it sorts the other books those users have interacted with, giving a higher score to
+                books they have bought. Finally it removes any books that the main user has bought and returns a list sorted by the recommendation strength.
+            </p>
+            <p>
+                At this point, I feel I have not simulated nearly enough data for this algorithm to give good enough recommendations, but I am confident 
+                that it would significantly improve as more user data is added to the database. Moreover, some users may not have enough activity 
+                data to build recommendations off of, as a fallback the system will generate the more popular books in the past month.
+            </p>
+        </div>
+        </main>
+    </div>
+    <footer>
+        <p>Daniel Martinez-Escalante. Last Revised 12/11/2024</p>
+    </footer>
+</body>
+</html>

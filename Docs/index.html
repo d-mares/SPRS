@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Booky Documentation</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" target="_self">
+            <img src="images/booky_documentation_logo.jpg" alt="booky documentation logo" class="logo" height="60">
+        </a>
+        <nav>
+            <ul>
+                <li class="header-nav-item"><a href="index.html" target="_self">About</a></li>
+                <li class="header-nav-item"><a href="development.html" target="_self">Development</a></li>
+                <li class="header-nav-item"><a href="guide.html" target="_self">User Guide</a></li>
+                <li class="header-nav-item"><a href="reflection.html" target="_self">Reflection</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="index.html" target="_self">About</a></li>
+                    <li><a href="development.html" target="_self">Development</a></li>
+                    <li><a href="guide.html" target="_self">User Guide</a></li>
+                    <li><a href="reflection.html" target="_self">Reflection</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+        <div id="wrapper">
+            <h1>About Booky</h1>
+            <p>
+                A user-friendly C# Windows Forms application designed to simulate the functionality of a modern bookstore This project connects to a robust, 
+                locally hosted, database to manage and display bookstore operations, offering a practical solution for displaying book inventories and handling user interactions,
+                all while offering recommendations based on what the user interacts with.
+            </p>
+            <br>
+            <hr>
+            <h2>Purpose</h2>
+            <div class="image-container">
+                <img src="images/app_homescreen.jpg" alt="booky dashboard">
+            </div>
+            <p>
+                Booky was created as my final project for an application development course, providing an opportunity 
+                to apply and integrate the concepts learned throughout the curriculum. The project was designed to deepen 
+                understanding of:
+            </p>
+            <ul id="purpose">
+                <li>Connecting a C# application to a database and dynamically managing data.</li>
+                <li>Implementing event-driven programming to create a responsive and user-friendly application.</li>
+                <li>Designing and organizing an intuitive interface suitable for a real-world scenario.</li>
+            </ul>
+            <p>
+                Beyond fulfilling the course requirements, Booky became a platform for personal growth and skill-building. 
+                It allowed for hands-on experience with database management, Windows Forms development, and problem-solving 
+                in software design. The project represents both a culmination of academic learning and a stepping stone for 
+                future, more ambitious endeavors.
+            </p>
+            <br>
+            <hr>
+            <h2>Key Features</h2>
+            <details>
+                <summary>User Management</summary>
+                <ul>
+                    <li>Store user purchase history in an SQL database.</li>
+                    <li>Simple user authentication for login.</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Product Management</summary>
+                <ul>
+                    <li>Add, edit, delete, and view products with details (ID, name, category, price)</li>
+                    <li>Use SQL to store and manage product data.</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Purchase Management</summary>
+                <ul>
+                    <li>Enable users to simulate purchases, updating purchase history and stock.</li>
+                    <li> Save each purchase transaction to the SQL database.</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Personalized Recommendations</summary>
+                <ul>
+                    <li>
+                        Use simple data analysis (e.g., most frequently purchased categories, recently purchased items) to suggest products.
+                    </li>
+                    <li>
+                        These recommendations are based on basic statistics from the purchase data, without complex AI models.
+                    </li>
+                </ul>
+            </details>
+            <details>
+                <summary>Database Management</summary>
+                <ul>
+                    <li>Use SQL to manage user data, product data, and purchase transactions</li>
+                    <li>Data persistence to ensure all data is saved and can be retrieved.</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Reports</summary>
+                <ul>
+                    <li>Generate a summary report showing purchase history for each user</li>
+                    <li>Report on most popular products and categories.</li>
+                </ul>
+            </details>
+        </div>
+        </main>
+    </div>
+    <footer>
+        <p>Daniel Martinez-Escalante. Last Revised 12/11/2024</p>
+    </footer>
+</body>
+</html>

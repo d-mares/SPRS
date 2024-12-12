@@ -72,7 +72,7 @@ namespace SPRS.Dashboard_Panels
                 "JOIN USER_ACTIVITY UA2 ON UA1.PRODUCT_ID = UA2.PRODUCT_ID " +
                 "WHERE UA1.USER_ID = @user_id AND UA1.USER_ID != UA2.USER_ID " +
                 "GROUP BY UA2.USER_ID " +
-                "HAVING SimilarityScore > 5 " + // the more data in these tables the higher this value can go, giving users a tighter recommendation system
+                "HAVING SimilarityScore > 0 " + // the more data in these tables the higher this value can go, giving users a tighter recommendation system
             "), " +
             "BookInteractions AS ( " +
                 "SELECT UA.PRODUCT_ID, " +
@@ -121,7 +121,7 @@ namespace SPRS.Dashboard_Panels
                     productIds.Add(Convert.ToInt32(row["PRODUCT_ID"]));
                 }
 
-                if (productIds.Count < 5) { FallbackRecommendation(); return; }
+                
                 Search_Result_Panel search_Result_Panel = new Search_Result_Panel(productIds);
                 search_Result_Panel.Dock = DockStyle.Fill;
                 panel1.Controls.Clear();

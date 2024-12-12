@@ -223,6 +223,11 @@ namespace SPRS.Dashboard_Panels
 
                 db.ExecQuery(query);
 
+                query = @"insert into user_activity(user_id, product_id, activity_type, activity_time) values (@user_id, @product_id, 'PURCHASE', NOW());";
+                db.AddParam("@user_id", Active_User.LoggedInUserId);
+                db.AddParam("@product_id", item.productId);
+                db.ExecQuery(query);
+
                 if (!string.IsNullOrEmpty(db.Exception))
                 {
                     MessageBox.Show($"{orderId}, {item.productId},{item.quantity}, {item.price}, {item.price * item.quantity}");
